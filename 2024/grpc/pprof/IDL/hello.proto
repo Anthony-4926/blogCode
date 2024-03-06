@@ -1,0 +1,21 @@
+syntax = "proto3"; // proto版本
+
+package IDL; // 当前proto文件所在的包
+
+// 分号前是利用该proto文件生成go文件时的文件路径。分号之后是go文件所在的包
+option go_package = "this_is_go_package_content/; Hello";
+
+message People {
+  string Name = 1;
+  uint32 Age = 2;
+}
+
+message HelloRequest{
+  People Who = 1;
+  string Msg = 2;
+}
+
+message HelloResponse{
+  People Who = 1;
+  string Msg = 2;
+}

@@ -1,0 +1,3 @@
+--go_out=./src/pb
+--go-grpc_out=./src/pb
+IDL/hello.proto
