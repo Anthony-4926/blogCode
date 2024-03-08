@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package IDL;
+
+option go_package = "hello/; hello";
+
+message People {
+  string Name = 1;
+  uint32 Age = 2;
+}
+
+message HelloRequest{
+  People Who = 1;
+  string Msg = 2;
+}
+
+message HelloResponse{
+  People Who = 1;
+  string Msg = 2;
+}
+
+service HelloService {
+  rpc Hello(stream HelloRequest) returns (stream HelloResponse);
+}
